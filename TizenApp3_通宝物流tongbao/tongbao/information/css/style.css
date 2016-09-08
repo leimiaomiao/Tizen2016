@@ -1,0 +1,11 @@
+.name{
+	display: block;
+}
+#buttonG{
+	padding-top:48px;
+	padding-left:0;
+	padding-right:0;
+}
+#logout{
+	background-color:#5c0b0b;
+}

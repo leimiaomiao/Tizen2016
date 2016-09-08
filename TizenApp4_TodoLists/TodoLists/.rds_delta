@@ -1,0 +1,14 @@
+#delete
+res/wgt/css/images
+res/wgt/css/jqm-docs.css
+res/wgt/css/jquery.mobile-1.3.2.css
+res/wgt/css/jquery.mobile.structure-1.3.2.css
+res/wgt/css/jquery.mobile.theme-1.3.2.css
+res/wgt/js/jqm-docs.js
+res/wgt/js/jquery-1.9.1.js
+res/wgt/js/jquery.mobile-1.3.2.js
+res/wgt/js/main.js
+#add
+#modify
+res/wgt/author-signature.xml
+res/wgt/signature1.xml

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Tongbao" />
+
+<title>主页</title>
+
+<link rel="stylesheet" type="text/css" href="index/css/style.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+<link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="css/ui-box.css">
+<link rel="stylesheet" href="css/ui-base.css">
+<link rel="stylesheet" href="css/ui-color.css">
+<link rel="stylesheet" href="css/appcan.icon.css">
+<link rel="stylesheet" href="css/appcan.control.css">
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.2.js"></script>
+<script type="text/javascript" src="index/js/main.js"></script>
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&ak=n1bbsrMllXw9v299swF8s1aamkLKQ140"></script>
+</head>
+
+<body>
+	<div class="page">
+
+		<div id="header" class="uh bc-text-head ub bc-head">
+			<div class="nav-btn" id="nav-left"></div>
+			<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">通宝同城货运</h1>
+			<div class="nav-btn nav-bt" id="nav-right"></div>
+		</div>
+		<div class="content">
+			<div class="map-box">
+				<div id="bMap"></div>
+			</div>
+			<div class="addOrder">
+				<form method="post" action="demoform.asp">
+					<div data-role="fieldcontain">
+						<label for="fullname">出发地：</label> <input type="text"
+							name="fullname" id="fullname"> <label for="fullname">目的地：</label>
+						<input type="text" name="fullname" id="fullname"> <label
+							for="bday">出发日期：</label> <input type="date" name="bday" id="bday">
+						<label for="btime">出发时间：</label> <input type="time" name="btime"
+							id="btime"> <label for="fullname">起点联系人：</label> <input
+							type="text" name="fullname" id="fullname"><label
+							for="fullname">手机号码</label> <input type="number" name="fullname"
+							id="fullname"><label for="fullname">终点联系人：</label> <input
+							type="text" name="fullname" id="fullname"><label
+							for="fullname">手机号码</label> <input type="number" name="fullname"
+							id="fullname"><label for="day">货物类型</label> <select
+							name="day" id="day">
+							<option value="mon">食品</option>
+							<option value="tue">家具</option>
+							<option value="wed">其他</option>
+						</select> <label for="fullname">货物重量(kg)</label> <input type="number"
+							name="fullname" id="fullname"> <label
+							for="fullname">货物体积(方)</label> <input type="number" name="fullname"
+							id="fullname"><label for="day">车辆类型</label>
+						<select name="day" id="day">
+							<option value="mon">小型面包车</option>
+							<option value="tue">中型面包车</option>
+							<option value="wed">皮卡</option>
+						</select> <label for="info">备注信息:</label>
+						<textarea name="addinfo" id="info"></textarea>
+						<label for="day">支付方式</label> <select name="day" id="day">
+							<option value="mon">线上</option>
+							<option value="tue">线下</option>
+						</select> <label for="fullname">酬劳</label> <input type="number"
+							name="fullname" id="fullname"> <input type="submit"
+							id="sub" value="提交" onclick="addOrder();"> <input
+							type="submit" id="sub" value="重置" onclick="addOrder();">
+						<input type="submit" id="sub" value="清空" onclick="addOrder();">
+					</div>
+
+
+
+
+				</form>
+				<h1></h1>
+				<h1></h1>
+				<h1></h1>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" class="ui-btn-active"
+						data-icon="home" data-theme="b">主页</a></li>
+					<li><a href="order.html" data-icon="gear" data-theme="b">订单管理</a></li>
+					<li><a href="favour.html" data-icon="star" data-theme="b">收藏</a></li>
+					<li><a href="information.html" data-icon="check"
+						data-theme="b">个人信息</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

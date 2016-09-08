@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Tongbao" />
+
+<title>主页</title>
+
+<link rel="stylesheet" type="text/css" href="order/css/style.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+<link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="css/ui-box.css">
+<link rel="stylesheet" href="css/ui-base.css">
+<link rel="stylesheet" href="css/ui-color.css">
+<link rel="stylesheet" href="css/appcan.icon.css">
+<link rel="stylesheet" href="css/appcan.control.css">
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.2.js"></script>
+<script type="text/javascript" src="order/js/main.js"></script>
+</head>
+
+<body>
+	<div data-role="page" id="pageone">
+
+		<div id="header" class="uh bc-text-head ub bc-head">
+			<div class="nav-btn" id="nav-left"></div>
+			<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">通宝同城货运</h1>
+			<div class="nav-btn nav-bt" id="nav-right"></div>
+		</div>
+
+
+		<div data-role="content">
+			<ul data-role="listview">
+				<li ><a href= "#pagetwo">当前无订单</a></li>
+			</ul>
+		</div>
+
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home" data-theme="b">主页</a></li>
+					<li><a href="order.html" class="ui-btn-active"
+						data-icon="gear" data-theme="b">订单管理</a></li>
+					<li><a href="favour.html" data-icon="star" data-theme="b">收藏</a></li>
+					<li><a href="information.html" data-icon="check"
+						data-theme="b">个人信息</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="pagetwo">
+		<div id="header" class="uh bc-text-head ub bc-head">
+			<div class="nav-btn" id="nav-left"></div>
+			<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">通宝同城货运</h1>
+			<div class="nav-btn nav-bt" id="nav-right"></div>
+		</div>
+		<div data-role="content">
+			<h1>订单详情</h1>
+			<h3>订单id:54</h3>
+			<h3>下单时间：2016-5-30 16:13:33</h3>
+			<h3>出发地： 南京大学鼓楼校区4舍</h3>
+			<h3>目的地：南京南站</h3>
+			<h3>起点联系人姓名:小明</h3>
+			<h3>起点联系人号码：15851813111</h3>
+			<h3>终点联系人姓名:小明</h3>
+			<h3>终点联系人号码：15851813111</h3>
+			<h3>装车时间：2016-5-30 17:31:00</h3>
+			<h3>车辆类型：小型面包车</h3>
+
+			<h3>酬劳：100</h3>
+			<h3>订单目前的状态：已删除</h3>
+			<div id="buttongroup" data-role="controlgroup" data-type="horizontal">
+				<button onclick = "endOrder();">结束</button>
+				<button onclick = "regretOrder();">取消</button>
+				<button onclick = "deleteOrder();">删除</button>
+				<a href="#pageone" data-role="button">返回</a>
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	margin:0px;
+	color:white;
+}
+.page{    
+	width: 300px;
+    height: 520px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+.contents{
+	width: 300px;
+	height:500px;
+    background-color: black;
+    margin: 0 auto;
+}
+.top{
+	width: 100%;
+	height: 381px;
+	border-bottom: 1px solid gray;
+}
+.main{
+	width: 70%;
+	height: 100%;
+	float: left;
+	padding: 3px 1px 1px 1px;
+}
+.max_table{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.max_table td{
+	width: 20px;
+	height: 16px;
+}
+.tip{
+	width: 29%;
+	height: 100%;
+	float: right;
+	border-left: 1px solid gray;
+}
+.tip .desc{
+	display: block;
+	font-size: 10px;
+	font-weight: 900;
+	margin: 5px 0 5px 5px;
+}
+.tip .score{
+	display: block;
+	font-size: 14px;
+	font-weight: 900;
+	width: 100%;
+	color: #53ff53;
+	text-align: center;
+}
+.min_table{
+	width: 83px;
+	height: 83px;
+	margin: 0 auto;
+}
+.min_table td{
+	width: 20px;
+	height: 18px;
+}
+.color-1{
+	background-color: #ff0000;
+}
+.color-2{
+	background-color: #0072e3;
+}
+.color-3{
+	background-color: #9aff02;
+}
+.color-4{
+	background-color: #00bb00;
+}
+.down{
+	width: 100%;
+	height: 119px;
+}
+.ope_table{
+	width: 93px;
+	height: 93px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.ope_table td{
+	width: 30px;
+	height: 26px;
+	border-radius: 2px;
+}
+.ope_table .key_top{
+	background: url(../images/arrow_t.png);
+}
+.ope_table .key_left{
+	background: url(../images/arrow_l.png);
+}
+.ope_table .key_right{
+	background: url(../images/arrow_r.png);
+}
+.ope_table .key_down{
+	background: url(../images/arrow_d.png);
+}
+.alert{
+    display: none;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: gray;
+    top: 0;
+    opacity: 0.8;
+}
+.alert .over{
+    display: block;
+    font-size: 27px;
+    font-weight: 900;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 130px;
+    color: #000000;
+}
+.alert .result{
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    color: #000000;
+    font-weight: 900;
+}
+.alert .restart{
+    display: block;
+    width: 67px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    color: #000000;
+    font-weight: 900;
+}
+.alert .restart:hover{
+	color:#352929;
+}

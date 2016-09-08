@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Tongbao" />
+
+<title>主页</title>
+
+<link rel="stylesheet" type="text/css" href="favour/css/style.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+<link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="css/ui-box.css">
+<link rel="stylesheet" href="css/ui-base.css">
+<link rel="stylesheet" href="css/ui-color.css">
+<link rel="stylesheet" href="css/appcan.icon.css">
+<link rel="stylesheet" href="css/appcan.control.css">
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.2.js"></script>
+<script type="text/javascript" src="favour/js/main.js"></script>
+</head>
+
+<body>
+	<div data-role="page">
+
+		<div id="header" class="uh bc-text-head ub bc-head">
+			<div class="nav-btn" id="nav-left"></div>
+			<h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">通宝同城货运</h1>
+			<div class="nav-btn nav-bt" id="nav-right"></div>
+		</div>
+
+
+		<div data-role="content">
+			<div data-role="collapsible-set" data-inset="false" data-icon="star">
+				<div data-role="collapsible">
+					<h3>常用司机</h3>
+					<ul data-role="listview" data-autodividers="true"
+						data-filter="true" data-filter-placeholder="搜索姓名 ...">
+						<li><a href="#" class="ui-grid-a"><span
+								class="ui-block-a">xiaoming</span> <span class="ui-block-b">电话:15851813111</span></a></li>
+					</ul>
+					<!--<form>
+						<ul data-role="listview" data-autodividers="true"
+							data-filter="true" data-filter-placeholder="搜索姓名 ...">
+							<li><a href="#" class="ui-grid-a"><span
+									class="ui-block-a">OB.YYF</span> <span class="ui-block-b">电话:96296296296</span></a></li>
+							<li><a href="#" class="ui-grid-a"><span
+									class="ui-block-a">OB.566</span> <span class="ui-block-b">电话:56656656656</span></a></li>
+							<li><a href="#" class="ui-grid-a"><span
+									class="ui-block-a">OB.dd</span> <span class="ui-block-b">电话:33333333333</span></a></li>
+							<li><a href="#" class="ui-grid-a"><span
+									class="ui-block-a">FTD.beef9</span> <span class="ui-block-b">电话:09090909090</span></a></li>
+							<li><a href="#" class="ui-grid-a"><span
+									class="ui-block-a">NewBee.H小豪</span> <span class="ui-block-b">电话:25025025025</span></a></li>
+						</ul>
+						<br>
+					</form>-->
+				</div>
+
+				<div data-role="collapsible">
+					<h3>常用地点</h3>
+					<ul data-role="listview">
+						<li><a href="#" class="ui-grid-a"><span
+								class="ui-block-a">xiaoming</span> <span class="ui-block-b">电话:15851813111</span><span class="ui-block-c" >地址：nanjing</span></a></li>
+						
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>增加收藏</h3>
+					<form>
+						<div data-role="fieldcontain">
+							<h2>添加常用司机</h2>
+							<label for="driver">电话号码:</label> <input type="number"
+								name="driver" id="driver"> <input type="submit"
+								onclick="addDriver();" data-inline="true" value="提交">
+						</div>
+						<div data-role="fieldcontain">
+							<h2>添加常用地址</h2>
+							<label for="local">地址:</label> <input type="text" name="local"
+								id="local"> <label for="contactName">联系人姓名：</label> <input
+								type="text" name="password1" id="password1"> <label
+								for="contactNumber">联系人号码：</label> <input type="text"
+								name="contactNumber" id="nickName"> <input type="submit"
+								data-inline="true" value="提交" onclick="addLocal();">
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home" data-theme="b">主页</a></li>
+					<li><a href="order.html" data-icon="gear" data-theme="b">订单管理</a></li>
+					<li><a href="favour.html" class="ui-btn-active"
+						data-icon="star" data-theme="b">收藏</a></li>
+					<li><a href="information.html" data-icon="check"
+						data-theme="b">个人信息</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
