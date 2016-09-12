@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<script src="./lib/jquery.js"></script>
+<script type="text/javascript" src="./lib/tau/mobile/js/tau.js"
+	data-build-remove="false"></script>
+<link rel="stylesheet" href="./lib/tau/mobile/theme/default/tau.css">
+
+<script src="./js/main.js"></script>
+
+<title>贷款计算器</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+
+<body>
+	<div data-role="page" id="page1">
+		<div data-role="header" id="header1" data-position="fixed">
+			<h1 id="headingone1">贷款计算器</h1>
+		</div>
+		<div data-role="content" id="content1" data-scroll="y"
+			data-handler="false">
+			<div class="jsq_div" id="jsq_div_input">
+				<input id="jsq_gjj" type="text"><a id="link1">商业性(万元)：</a><input
+					id="jsq_sy" type="text"><a id="link2">公积金(万元)：</a><a
+					id="link3">按揭年数(年)：</a><input id="jsq_ns" type="text"><a
+					id="link4">商业贷款率(%)：</a><input id="jsq_syll" type="text"><a
+					id="link5">公积金利率(%)：</a><input id="jsq_gjjll" type="text">
+			</div>
+			<div data-role="button" id="button_debx">等额本息</div>
+			<div data-role="button" id="button_debj">等额本金</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="page2">
+		<div data-role="header" id="header2" data-position="fixed">
+			<h1 id="headingone2">计算结果</h1>
+		</div>
+		<div data-role="content" id="content2" data-scroll="y"
+			data-handler="false">
+			<div class="jsq_div" id="jsq_div_result">
+				<div class="jsq_row">
+					<span class="jsq_label"><strong>贷款总额：</strong> </span> 
+					<span class="jsq_result" id="jsq_dkze"><strong>0</strong> </span>
+				</div>
+				<div class="jsq_row">
+					<span class="jsq_label"><strong>还款总额：</strong> </span> 
+					<span class="jsq_result" id="jsq_hkze"><strong>0</strong> </span>
+				</div>
+				<div class="jsq_row">
+					<span class="jsq_label"><strong>支付利息款：</strong> </span> 
+					<span class="jsq_result" id="jsq_zflxs"><strong>0</strong> </span>
+				</div>
+				<div class="jsq_row">
+					<span class="jsq_label"><strong>首期付款：</strong> </span> 
+					<span class="jsq_result" id="jsq_sqfk"><strong>0</strong> </span>
+				</div>
+				<div class="jsq_row">
+					<span class="jsq_label"><strong>贷款月数：</strong> </span> 
+					<span class="jsq_result" id="jsq_dkys"><strong>0</strong> </span>
+				</div>
+				<div class="jsq_row">
+					<span class="jsq_label"><strong> 月均金额：</strong> </span> 
+					<span class="jsq_result" id="jsq_yjhk"> </span>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer">
+			<div data-role="button" id="button_back">返回</div>
+		</div>
+	</div>
+</body>
+</html>

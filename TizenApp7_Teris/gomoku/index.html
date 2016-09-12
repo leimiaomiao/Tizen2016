@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title></title>
+
+    <style type="text/css">
+
+        body {
+
+            margin: 10px;
+
+        }
+
+    </style>
+	<script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript">
+
+        var canvas;
+
+        var context;
+
+        var isWhite = true;//�����Ƿ���ֵ�����
+
+        var isWell = false;//���øþ������Ƿ�Ӯ�ˣ����Ӯ�˾Ͳ���������
+
+        var img_b = new Image();
+
+        img_b.src = "images/b.png";//����ͼƬ
+
+        var img_w = new Image();
+
+        img_w.src = "images/w.png";//����ͼƬ
+
+ 
+
+        var chessData = new Array(15);//���Ϊ���̵Ķ�ά������������������Ϣ����ʼ��0Ϊû���߹�ģ�1Ϊ�����ߵģ�2Ϊ�����ߵ�
+
+        for (var x = 0; x < 15; x++) {
+
+            chessData[x] = new Array(15);
+
+            for (var y = 0; y < 15; y++) {
+
+                chessData[x][y] = 0;
+
+            }
+
+        }
+
+ 
+
+        function drawRect() {//ҳ�������ϵ��ú����ʼ������
+
+            canvas = document.getElementById("canvas");
+
+            context = canvas.getContext("2d");
+
+ 
+
+            for (var i = 0; i <= 320; i += 20) {//�������̵���
+
+                context.beginPath();
+
+                context.moveTo(0, i);
+
+                context.lineTo(320, i);
+
+                context.closePath();
+
+                context.stroke();
+
+ 
+
+                context.beginPath();
+
+                context.moveTo(i, 0);
+
+                context.lineTo(i, 320);
+
+                context.closePath();
+
+                context.stroke();
+
+            }
+
+        }
+
+        function play(e) {//�����ʱ����
+
+            var x = parseInt((e.clientX - 10) / 20);//���������������������ˣ�65��65������ô���ǵ���ˣ�1��1����λ��
+
+            var y = parseInt((e.clientY - 10) / 20);
+
+ 
+
+            if (chessData[x][y] != 0) {//�жϸ�λ���Ƿ��¹���
+
+                alert("You cannot put your chess here!");
+
+                return;
+
+            }
+
+ 
+
+            if (isWhite) {
+
+                isWhite = false;
+
+                drawChess(1, x, y);
+
+            }
+
+            else {
+
+                isWhite = true;
+
+                drawChess(2, x, y);
+
+            }
+
+ 
+
+        }
+
+        function drawChess(chess, x, y) {//����Ϊ���壨1Ϊ���壬2Ϊ���壩������λ��
+
+            if (isWell == true) {
+
+                alert("Game is over, please refresh to start.");
+
+                return;
+
+            }
+
+            if (x >= 0 && x < 15 && y >= 0 && y < 15) {
+
+                if (chess == 1) {
+
+                    context.drawImage(img_w, x * 20 + 10, y * 20 + 10);//���ư���
+
+                    chessData[x][y] = 1;
+
+                }
+
+                else {
+
+                    context.drawImage(img_b, x * 20 + 10, y * 20 + 10);
+
+                    chessData[x][y] = 2;
+
+                }
+
+                judge(x, y, chess);
+
+            }
+
+        }
+
+        function judge(x, y, chess) {//�жϸþ������Ƿ�Ӯ��
+
+            var count1 = 0;
+
+            var count2 = 0;
+
+            var count3 = 0;
+
+            var count4 = 0;
+
+ 
+
+            //�����ж�
+
+            for (var i = x; i >= 0; i--) {
+
+                if (chessData[i][y] != chess) {
+
+                    break;
+
+                }
+
+                count1++;
+
+            }
+
+            for (var i = x + 1; i < 15; i++) {
+
+                if (chessData[i][y] != chess) {
+
+                    break;
+
+                }
+
+                count1++;
+
+            }
+
+            //�����ж�
+
+            for (var i = y; i >= 0; i--) {
+
+                if (chessData[x][i] != chess) {
+
+                    break;
+
+                }
+
+                count2++;
+
+            }
+
+            for (var i = y + 1; i < 15; i++) {
+
+                if (chessData[x][i] != chess) {
+
+                    break;
+
+                }
+
+                count2++;
+
+            }
+
+            //���������ж�
+
+            for (var i = x, j = y; i >= 0, j >= 0; i--, j--) {
+
+                if (chessData[i][j] != chess) {
+
+                    break;
+
+                }
+
+                count3++;
+
+            }
+
+            for (var i = x + 1, j = y + 1; i < 15, j < 15; i++, j++) {
+
+                if (chessData[i][j] != chess) {
+
+                    break;
+
+                }
+
+                count3++;
+
+            }
+
+            //���������ж�
+
+            for (var i = x, j = y; i >= 0, j < 15; i--, j++) {
+
+                if (chessData[i][j] != chess) {
+
+                    break;
+
+                }
+
+                count4++;
+
+            }
+
+            for (var i = x + 1, j = y - 1; i < 15, j >= 0; i++, j--) {
+
+                if (chessData[i][j] != chess) {
+
+                    break;
+
+                }
+
+                count4++;
+
+            }
+
+ 
+
+            if (count1 >= 5 || count2 >= 5 || count3 >= 5 || count4 >= 5) {
+
+                if (chess == 1) {
+
+                    alert("White Win");
+                    window.location.reload();
+
+                }
+
+                else {
+
+                    alert("Black Win");
+                    window.location.reload();
+
+                }
+
+                isWell = true;//���øþ������Ѿ�Ӯ�ˣ�������������
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body onload="drawRect()">
+
+    <div>
+
+        <canvas width="320" id="canvas" onmousedown="play(event)" height="320">
+
+        </canvas>
+
+    </div>
+
+ 
+
+</body>
+
+</html>

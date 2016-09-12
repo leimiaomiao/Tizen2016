@@ -1,0 +1,102 @@
+#page1 {
+	font-size:12px
+}
+
+#page2 {
+	font-size:12px
+}
+#page1 #jsq_div_input {
+  height : 290px;
+  width : 296px;
+}
+
+#page1 #jsq_div_result {
+  height : 290px;
+  width : 296px;
+}
+
+#page1 #jsq_gjj{
+  position : absolute;
+  height : 25px;
+  width : 181px;
+  left : 132px;
+  top : 13px;
+}
+
+#page1 #link1 {
+  position : absolute;
+  height : 27px;
+  width : 85px;
+  left : 0px;
+  top : 66px;
+}
+
+#page1 #jsq_sy {
+  position : absolute;
+  height : 25px;
+  width : 181px;
+  left : 132px;
+  top : 60px;
+}
+
+#page1 #link2 {
+  position : absolute;
+  height : 27px;
+  width : 90px;
+  left : 0px;
+  top : 19px;
+}
+
+#page1 #link3 {
+  position : absolute;
+  height : 25px;
+  width : 104px;
+  left : 0px;
+  top : 120px;
+}
+
+#page1 #jsq_ns {
+  position : absolute;
+  height : 37px;
+  width : 181px;
+  left : 132px;
+  top : 113px;
+}
+
+#page1 #link4 {
+  position : absolute;
+  height : 37px;
+  width : 114px;
+  left : 0px;
+  top : 168px;
+}
+
+#page1 #jsq_syll {
+  position : absolute;
+  height : 37px;
+  width : 181px;
+  left : 132px;
+  top : 167px;
+}
+
+#page1 #link5 {
+  position : absolute;
+  height : 37px;
+  width : 116px;
+  left : 0px;
+  top : 219px;
+}
+
+#page1 #jsq_gjjll {
+  position : absolute;
+  height : 37px;
+  width : 181px;
+  left : 132px;
+  top : 218px;
+}
+.jsq_div{margin:0 auto;position:relative}
+.jsq_row{position:relative;height:20px;top:20px;left:20px;text-align:center;}
+.jsq_label{width:100px;text-align:left;}
+.jsq_result{width:100%;text-align:right;color:red;}
+
+#jsq_yjhk{font-size: 16pt }
