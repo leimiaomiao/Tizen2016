@@ -1,6 +1,7 @@
 //定义基础变量
 var w,h,map=[],next_map=[],pos=pos_pre={x:0,y:0,s_style:0,rotate:0},
 	next={s_style:0,rotate:0},score;
+var winWidth=380,winHeight=500;
 //维护图形数据(8种图形，每种图形包含旋转图形)
 var data = [
 			[ [[1,2],[3,4]] ],
@@ -10,11 +11,12 @@ var data = [
 			[ [[0,1,0],[2,3,4]] , [[0,1],[2,3],[0,4]] , [[1,2,3],[0,4,0]] , [[1,0],[2,3],[4,0]] ],
 			[ [[1,2],[3,0],[4,0]] , [[1,0,0],[2,3,4]] , [[0,1],[0,2],[3,4]] , [[1,2,3],[0,0,4]] ],
 			[ [[1,2],[0,3],[0,4]] , [[1,2,3],[4,0,0]] , [[1,0],[2,0],[3,4]] , [[0,0,1],[2,3,4]] ],
-			[ [[1,2,3,4]] , [[1],[2],[3],[4]] ]	
+			[ [[1,2,3,4]] , [[1],[2],[3],[4]] ]
 			];
 //8种图形
 var s_size = 8;
 var run;
+var squares = [];
 
 function showEnd(status){
 	if(status == 1){
@@ -30,8 +32,6 @@ function start(){
 	showEnd(0);
 	//初始变量数据
 	score = 0;
-	w = 10;
-	h = 17;
 	//清除图形
 	clear_map_data();
 	clear_next_map_data();
@@ -54,7 +54,7 @@ function new_pos(){
 }
 
 function new_next(){
-	next={s_style:~~(Math.random()*s_size),rotate:0};	
+	next={s_style:~~(Math.random()*s_size),rotate:0};
 }
 
 function clear_map_data(){
@@ -122,10 +122,10 @@ function map_paint(){
 	var td = 0;
 	for(var i=0;i<h;i++){
 		for(var j=0;j<w;j++){
-			td = $('.max_table tr:eq('+i+') td:eq('+j+')');
-			td.removeClass();
+            var c = new Date();
+			squares[i][j].removeClass();
 			if(map[i][j] != 0){
-				td.addClass('active color-'+map[i][j]);	
+                squares[i][j].addClass('active color-'+map[i][j]);
 			}
 		}
 	}
@@ -133,7 +133,7 @@ function map_paint(){
 
 function update_map(){
 	//清除之前位置的图形存储的数据
-	map_remove(pos_pre);
+	map_remove(pos_pre)
 	//添加当前图形需要存储的数据
 	map_add(pos);
 	//重新绘制
@@ -166,7 +166,7 @@ function update_next_map(){
 			td = $('.min_table tr:eq('+i+') td:eq('+j+')');
 			td.removeClass();
 			if(next_map[i][j] != 0){
-				td.addClass('active color-'+next_map[i][j]);	
+				td.addClass('active color-'+next_map[i][j]);
 			}
 		}
 	}
@@ -195,7 +195,7 @@ function rotate(){
 function left(){
 	if(leftCheck()){
 		pos_pre = {x:pos.x,y:pos.y,s_style:pos.s_style,rotate:pos.rotate};
-		pos.x--;
+        pos.x--;
 		update_map();
 	}
 }
@@ -212,7 +212,10 @@ function down(){
 	if(downCheck()){
 		pos_pre = {x:pos.x,y:pos.y,s_style:pos.s_style,rotate:pos.rotate};
 		pos.y++;
+		var a = new Date();
 		update_map();
+        var b = new Date();
+        console.debug((b-a)+"ms");
 	}else{
 		//到头 检测是否可以消除行
 		merge();
@@ -235,7 +238,7 @@ function rotateCheck(){
 	return check(x,y,shape);
 }
 
-//获取以当前图形坐标 x,y点为基础，其最右边的空格点的x坐标，若无空格点即为x 
+//获取以当前图形坐标 x,y点为基础，其最右边的空格点的x坐标，若无空格点即为x
 function getMaxX(x,y,shape){
 	var max = x;
 	map_remove(shape);
@@ -335,7 +338,7 @@ function merge(){
 	}
 	//消除
 	var r_size = r_merge.length;
-	score += r_size*(100+20*r_size);	
+	score += r_size*(100+20*r_size);
 	$('.max_table .delete').remove();
 	$('.max_table tbody').prepend(tr);
 	$('.score').html(score);
@@ -358,7 +361,7 @@ function next_turn(){
 
 function go(){
 	start();
-	run = setInterval(down,400);
+	run = setInterval(down,600);
 }
 
 var t,l,r,d;
@@ -397,21 +400,57 @@ function unspeed(event){
 	}
 }
 
-$(document).on('mousedown','.key_down','d',speed);
+$(document).on('taphold','.key_down','d',speed);
 $(document).on('mouseup','.key_down','d',unspeed);
-$(document).on('mousedown','.key_top','t',speed);
+$(document).on('taphold','.key_top','t',speed);
 $(document).on('mouseup','.key_top','t',unspeed);
-$(document).on('mousedown','.key_left','l',speed);
+$(document).on('taphold','.key_left','l',speed);
 $(document).on('mouseup','.key_left','l',unspeed);
-$(document).on('mousedown','.key_right','r',speed);
+$(document).on('taphold','.key_right','r',speed);
 $(document).on('mouseup','.key_right','r',unspeed);
 $(document).on('mouseup','body','all',unspeed);
 
-$(document).on('click','.key_top',rotate);
-$(document).on('click','.key_left',left);
-$(document).on('click','.key_right',right);
-$(document).on('click','.key_down',down);
-$(document).on('click','.restart',go);
+$(document).on('tap','.key_top',rotate);
+$(document).on('tap','.key_left',left);
+$(document).on('tap','.key_right',right);
+$(document).on('tap','.key_down',down);
+$(document).on('tap','.restart',go);
+
+function initGrid(){
+	var content = document.getElementsByClassName('max_table')[0];
+    var tbody = document.createElement("tbody");
+    for(var j = 0; j < h; j++) {  
+        var col = document.createElement("tr");  
+        for(var i = 0; i < w; i++) {  
+            var row = document.createElement("td");
+            col.appendChild(row);  
+        }
+        tbody.appendChild(col);  
+    }
+    content.appendChild(tbody);
+    //resize top height
+    var main = document.getElementsByClassName('main')[0];
+    var top = document.getElementsByClassName('top')[0];
+    var tip = document.getElementsByClassName('tip')[0];
+    var down = document.getElementsByClassName('down')[0];
+    top.style.height = ""+(main.clientHeight+2)+"px";
+    tip.style.width = ""+(winWidth-main.clientWidth-3)+"px";
+    down.style.height = ""+(winHeight-top.clientHeight-1)+"px";
+    //显示 其他部分
+    tip.style.display = "block";
+    down.style.display = "block";
+}
+
+//将方块 缓存起来 提升获取速度
+function cacheSquares(){
+	squares = [];
+    for(var i=0;i<h;i++) {
+		squares[i] = [];
+        for (var j = 0; j < w; j++) {
+            squares[i][j] = td = $('.max_table tr:eq('+i+') td:eq('+j+')');
+        }
+    }
+}
 
 window.onload = function() {
     // TODO:: Do your initialization job
@@ -424,6 +463,30 @@ window.onload = function() {
             } catch (ignore) {}
         }
     });
+
+	//window size
+	var tipWidth=92;
+	var optHeight=140;
+	if (window.innerWidth){
+		winWidth = window.innerWidth;
+	}
+	else if ((document.body) && (document.body.clientWidth)){
+		winWidth = document.body.clientWidth;
+	}
+	if (window.innerHeight){
+		winHeight = window.innerHeight;
+	}
+	else if ((document.body) && (document.body.clientHeight)){
+		winHeight = document.body.clientHeight;
+	}
+	w = Math.floor((winWidth-tipWidth)/22);
+	h = Math.floor((winHeight-optHeight)/22);
+    
+	initGrid();
+	cacheSquares();
+
+    console.log("win WH"+winWidth+"/"+winHeight);
+    console.log("size"+w+"/"+h);
     
     go();
 };

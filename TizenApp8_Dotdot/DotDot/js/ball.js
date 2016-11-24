@@ -56,7 +56,7 @@ function ExpandBall(x,y,life){
 }
 
 function ShinkBall(x,y,life){
-    this.base = new Ball(x,y,life,"#FFFF66");
+    this.base = new Ball(x,y,life,"#03A9F4");
     this.cast = false;
     this.castMagic = function(hero){
     	if(hero.r > 2){

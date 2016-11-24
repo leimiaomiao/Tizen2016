@@ -1,32 +1,28 @@
 html,body{
 	width: 100%;
 	height: 100%;
-	background-color: white;
+	background-color: black;
 	margin:0px;
 	color:white;
 }
-.page{    
-	width: 300px;
-    height: 520px;
+.page{
+	width: 100%;
+    height: 100%;
     margin: 0 auto;
-    padding-top: 5px;
 }
 .contents{
-	width: 300px;
-	height:500px;
+	width: 100%;
+	height: 100%;
     background-color: black;
     margin: 0 auto;
 }
 .top{
 	width: 100%;
-	height: 381px;
-	border-bottom: 1px solid gray;
 }
 .main{
-	width: 70%;
 	height: 100%;
 	float: left;
-	padding: 3px 1px 1px 1px;
+	margin: 1px;
 }
 .max_table{
 	width: 100%;
@@ -34,18 +30,19 @@ html,body{
 	margin: 0 auto;
 }
 .max_table td{
-	width: 20px;
-	height: 16px;
+	width: 18px;
+	height: 18px;
 }
 .tip{
-	width: 29%;
+	display: none;
+	width: 90px;
 	height: 100%;
 	float: right;
 	border-left: 1px solid gray;
 }
 .tip .desc{
 	display: block;
-	font-size: 10px;
+	font-size: 14px;
 	font-weight: 900;
 	margin: 5px 0 5px 5px;
 }
@@ -56,7 +53,21 @@ html,body{
 	width: 100%;
 	color: #53ff53;
 	text-align: center;
+	margin-bottom: 12px;
 }
+.tip ul{
+	display: block;
+	font-size: 14px;
+	font-weight: 900;
+	margin: 0 auto;
+	padding: 5px 0;
+	width: 80px;
+	list-style: none inside;
+}
+.tip ul>li{
+	text-align: center;
+}
+
 .min_table{
 	width: 83px;
 	height: 83px;
@@ -79,31 +90,33 @@ html,body{
 	background-color: #00bb00;
 }
 .down{
+	display: none;
 	width: 100%;
-	height: 119px;
+	height: 150px;
+	border-top: 1px solid gray;
 }
 .ope_table{
-	width: 93px;
-	height: 93px;
+	width: 141px;
+	height: 141px;
 	margin: 0 auto;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 .ope_table td{
-	width: 30px;
-	height: 26px;
+	width: 40px;
+	height: 36px;
 	border-radius: 2px;
 }
 .ope_table .key_top{
-	background: url(../images/arrow_t.png);
+	background: url(../images/arrow_44_t.png);
 }
 .ope_table .key_left{
-	background: url(../images/arrow_l.png);
+	background: url(../images/arrow_44_l.png);
 }
 .ope_table .key_right{
-	background: url(../images/arrow_r.png);
+	background: url(../images/arrow_44_r.png);
 }
 .ope_table .key_down{
-	background: url(../images/arrow_d.png);
+	background: url(../images/arrow_44_d.png);
 }
 .alert{
     display: none;
@@ -135,14 +148,26 @@ html,body{
     font-weight: 900;
 }
 .alert .restart{
-    display: block;
-    width: 67px;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 30px;
-    color: #000000;
-    font-weight: 900;
+	display: block;
+	width: 80px;
+	border: none;
+	background: #F89406;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 4px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 15px;
+	color: #000000;
+	font-weight: 900;
+	font-size: 16px;
 }
 .alert .restart:hover{
 	color:#352929;
+}
+.ui-loader{
+	display: none;
+}
+.ui-btn-inner{
+	display: none;
 }

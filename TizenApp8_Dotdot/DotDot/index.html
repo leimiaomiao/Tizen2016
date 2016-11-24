@@ -20,9 +20,21 @@
 </head>
 
 <body>
+    <div class="tips_container">
+        <ul class="tips">
+            <li><span class="red">红色球</span>-结束</li>
+            <li><span class="blue">黄色球</span>-缩小</li>
+            <li><span class="grey">灰色球</span>-变大</li>
+            <li><span class="green">绿色球</span>-保护</li>
+        </ul>
+        <div class="close"></div>
+    </div>
+    <div class="show"></div>
     <svg id="container">
     	<text x="10" y="40" font-family="Verdana" font-size="40" fill="lightgrey" id="score">0</text>
-   		<text font-family="Verdana" font-size="30" fill="lightgrey" id="replay">replay</text>
+   		<text font-family="Verdana" font-size="30" fill="lightgrey" id="replay">Replay</text>
+        <text font-family="Verdana" font-size="30" fill="lightgrey" id="play">Play</text>
+        <text font-family="Verdana" font-size="20" fill="lightgrey" id="target">看你能活多久！</text>
     </svg>
 </body>
 </html>

@@ -1,3 +1,61 @@
 body {
 	
 }
+.ui-page{
+	height: 99.99% !important;
+	min-height: 99.99% !important;
+}
+
+.tips_container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: #f7f7f7;
+	opacity: 0.8;
+}
+
+.tips_container .close{
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/close.png);
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.show{
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/show.png);
+	right: 8px;
+	top: 2px;
+	opacity: 0.2;
+	display: none;
+}
+
+.tips{
+	position: relative;
+	width: 116px;
+	list-style: none;
+	color: grey;
+	font: 20px/37px Verdana,arial,sans-serif;
+	margin: 0 auto;
+	margin-top:100px;
+	padding: 0;
+}
+.tips li{
+	padding:1px 3px; 
+}
+.tips span.red{
+	color: #FF6666;
+}
+.tips span.blue{
+	color: #03A9F4;
+}
+.tips span.green{
+	color: #99CC66;
+}
+.tips span.grey{
+	color: #666666;
+}
